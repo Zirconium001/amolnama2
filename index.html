@@ -2,113 +2,113 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Basic Calendar - May 2025</title>
+  <title>May 2025 Calendar</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      background: #f9f9f9;
-      margin: 20px;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f7faff;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      padding: 50px;
     }
+    a {
+  color: inherit;        /* Use parent element's text color     */
+  text-decoration: none; /* Remove underline */
+  font-weight: normal;   /* Optional: makes sure it's not bold */
+}
 
-    h1 {
-      margin-bottom: 10px;
-    }
+    a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+  color: #5c6ac4;
+} 
 
     .calendar {
-      display: grid;
-      grid-template-columns: repeat(7, 1fr);
-      max-width: 700px;
-      margin: 0 auto;
-      gap: 5px;
-    }
-
-    .day, .date {
-      padding: 10px;
-      border: 1px solid #ccc;
+      text-align: center;
       background: white;
+      padding: 20px 30px;
+      border-radius: 12px;
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
     }
 
-    .day {
-      font-weight: bold;
-      background: #eee;
+    .calendar h1 {
+      color: #5c6ac4;
+      margin-bottom: 20px;
     }
 
-    .empty {
-      background: transparent;
-      border: none;
-    }
-
-    .date a {
-      display: block;
-      text-decoration: none;
-      color: black;
-      height: 100%;
+    table {
       width: 100%;
+      border-collapse: collapse;
     }
 
-    .date {
+    th, td {
+      padding: 25px;
+      text-align: center;
+      border-radius: 20px;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    thead th {
+      color: #5c6ac4;
+      font-weight: 600;
+    }
+
+    td {
+      background: #f0f4ff;
       cursor: pointer;
     }
 
-    .date:hover {
-      background-color: #f0f0f0;
+    td:hover {
+      background: #dbe3ff;
+      transform: scale(1.05);
+    }
+
+    .today {
+      background-color: #ffcccb !important;
+      color: #000;
+      font-weight: bold;
+      box-shadow: 0 0 0px #ffaaaa;
     }
   </style>
 </head>
 <body>
 
+<div class="calendar">
   <h1>May 2025</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td></td><td></td><td></td><td></td><td><a href="01/index.html">1</td><td><a href="02/index.html">2</td><td><a href="03/index.html">3</td></tr>
+      <tr><td><a href="04/index.html">4</td><td><a href="05/index.html">5</td><td><a href="06/index.html">6</td><td><a href="07/index.html">7</td><td><a href="08/index.html">8</td><td><a href="09/index.html">9</td><td><a href="10/index.html">10</td></tr>
+      <tr><td><a href="11/index.html">11</td><td><a href="12/index.html">12</td><td><a href="13/index.html">13</td><td><a href="14/index.html">14</td><td><a href="15/index.html">15</td><td><a href="16/index.html">16</td><td><a href="17/index.html">17</td></tr>
+      <tr><td><a href="18/index.html">18</td><td><a href="19/index.html">19</td><td><a href="20/index.html">20</td><td><a href="21/index.html">21</td><td><a href="22/index.html">22</td><td><a href="23/index.html">23</td><td><a href="24/index.html">24</td></tr>
+      <tr><td><a href="25/index.html">25</td><td><a href="26/index.html">26</td><td><a href="27/index.html">27</td><td><a href="28/index.html">28</td><td><a href="29/index.html">29</td><td><a href="30/index.html">30</td><td><a href="31/index.html">31</td></tr>
+    </tbody>
+  </table>
+</div>
 
-  <div class="calendar">
-    <!-- Weekdays -->
-    <div class="day">Sun</div>
-    <div class="day">Mon</div>
-    <div class="day">Tue</div>
-    <div class="day">Wed</div>
-    <div class="day">Thu</div>
-    <div class="day">Fri</div>
-    <div class="day">Sat</div>
+<script>
+  // Highlight today's date only if the current month is May
+  document.addEventListener("DOMContentLoaded", () => {
+    const today = new Date();
+    const thisMonth = today.getMonth(); // May = 4 (zero-indexed)
+    const thisDate = today.getDate();
 
-    <!-- May 2025 starts on a Thursday, so 4 empty divs -->
-    <div class="empty"></div>
-    <div class="empty"></div>
-    <div class="empty"></div>
-    <div class="empty"></div>
-
-    <!-- Days of May -->
-    <div class="date"><a href="01index.html">1</a></div>
-    <div class="date"><a href="02index.html">2</a></div>
-    <div class="date"><a href="03index.html">3</a></div>
-    <div class="date"><a href="04index.html">4</a></div>
-    <div class="date"><a href="05index.html">5</a></div>
-    <div class="date"><a href="06index.html">6</a></div>
-    <div class="date"><a href="07index.html">7</a></div>
-    <div class="date"><a href="08index.html">8</a></div>
-    <div class="date"><a href="09index.html">9</a></div>
-    <div class="date"><a href="10index.html">10</a></div>
-    <div class="date"><a href="11index.html">11</a></div>
-    <div class="date"><a href="12index.html">12</a></div>
-    <div class="date"><a href="13index.html">13</a></div>
-    <div class="date"><a href="14index.html">14</a></div>
-    <div class="date"><a href="15index.html">15</a></div>
-    <div class="date"><a href="16index.html">16</a></div>
-    <div class="date"><a href="17index.html">17</a></div>
-    <div class="date"><a href="18index.html">18</a></div>
-    <div class="date"><a href="19index.html">19</a></div>
-    <div class="date"><a href="20index.html">20</a></div>
-    <div class="date"><a href="21index.html">21</a></div>
-    <div class="date"><a href="22index.html">22</a></div>
-    <div class="date"><a href="23index.html">23</a></div>
-    <div class="date"><a href="24index.html">24</a></div>
-    <div class="date"><a href="25index.html">25</a></div>
-    <div class="date"><a href="26index.html">26</a></div>
-    <div class="date"><a href="27index.html">27</a></div>
-    <div class="date"><a href="28index.html">28</a></div>
-    <div class="date"><a href="29index.html">29</a></div>
-    <div class="date"><a href="30index.html">30</a></div>
-    <div class="date"><a href="31index.html">31</a></div>
-  </div>
+    if (thisMonth === 4) {
+      const cells = document.querySelectorAll("td");
+      cells.forEach(cell => {
+        if (cell.textContent.trim() === thisDate.toString()) {
+          cell.classList.add("today");
+        }
+      });
+    }
+  });
+</script>
 
 </body>
 </html>
